@@ -1,0 +1,23 @@
+{
+  "name": "tripopolo",
+  "version": "1.0.0",
+  "description": "Travel site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thisispayam/tripopolo.git"
+  },
+  "author": "Payam Kazemi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thisispayam/tripopolo/issues"
+  },
+  "homepage": "https://github.com/thisispayam/tripopolo#readme",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0"
+  }
+}
