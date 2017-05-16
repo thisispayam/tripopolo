@@ -1,6 +1,10 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    watch = require('gulp-watch'),
+    autoprefixer = require('autoprefixer'),
+    postcss = require('gulp-postcss'),
+    cssvars = require('postcss-simple-vars'),
+    nested = require('postcss-nested');
 
-var watch = require('gulp-watch');
 
 //creating a default task
 
@@ -18,8 +22,10 @@ gulp.task('html', function(){
 
 // a task to do somthing inside our CSS file (style.css)
 gulp.task('styles',function(){
-    console.log('Sass or PostCss tasks will run here');
-})
+     return gulp.src('./app/assets/styles/style.css')
+    .pipe(postcss([cssvars, nested, autoprefixer])) //all the postcss plugins will go here
+    .pipe(gulp.dest('./app/temp/styles')); //where the css file gets compiled
+});
 
 
 
@@ -28,11 +34,8 @@ gulp.task('watch', function(){
     watch('./app/index.html', function(){
         gulp.start('html'); // watching for any change to our index.html
     });
-});
-
-
-gulp.task('watch', function(){
-    watch('./app/assets/styles/**/*.css', function(){ // watch any folder or css file inside assets folder
+    
+     watch('./app/assets/styles/**/*.css', function(){ // watch any folder or css file inside assets folder
         gulp.start('styles'); // watching for any change to our style css file
     });
 });
