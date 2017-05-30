@@ -9,5 +9,9 @@ var gulp =          require('gulp'),
 gulp.task('styles',function(){
      return gulp.src('./app/assets/styles/style.css')
     .pipe(postcss([cssImport, cssvars, nested, autoprefixer])) //all the postcss plugins will go here
+     .on('error', function(errorInfo){
+         console.log(errorInfo.toString());
+         this.emit('end');
+     })
     .pipe(gulp.dest('./app/temp/styles')); //where the css file gets compiled
 });
