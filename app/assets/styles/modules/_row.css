@@ -1,0 +1,24 @@
+.row {
+    
+    @mixin clearfix;
+    
+    /* removing the 65px gap from the last column div*/
+    &--gutter {
+        margin-right: -65px;
+    }
+    &--gutter > div{
+        padding-right:65px;
+    }
+    
+    @mixin atMedium{
+        &__med-4{
+            float:left;
+            width:33.33%;
+        }
+        &__med-8{
+            float:left;
+            width:66.66%;
+        }
+    }
+    
+}

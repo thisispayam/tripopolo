@@ -1,0 +1,12 @@
+.wrapper{
+    padding: 0 18px;
+    overflow: hidden;
+    max-width:1200px;
+    margin: 0 auto;
+    &--medium {
+        max-width: 976px;
+    }
+    .wrapper { /* any wrapper inside another wrapper gets no paddings*/
+        padding:0;
+    }
+}
