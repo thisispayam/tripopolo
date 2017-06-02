@@ -6,7 +6,13 @@
     &--gutter {
         margin-right: -65px;
     }
+     &--gutter-lg {
+        margin-right: -100px;
+    }
     &--gutter > div{
+        padding-right:65px;
+    }
+    &--gutter-lg > div{
         padding-right:65px;
     }
     &__b-margin-until-med{
@@ -22,6 +28,10 @@
         }
         &__med-4--larger{
             width:37%;
+        }
+        &__med-6{
+            float:left;
+            width:50%;
         }
         &__med-8{
             float:left;
