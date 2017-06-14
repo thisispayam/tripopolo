@@ -12,6 +12,9 @@
         @mixin atMedium{
             display:block;
         }
+         &--is-visible{
+            display:block;
+        }
     }
     &__btn-container{
         float:right;
@@ -41,5 +44,6 @@
         @mixin atMedium{
             display:none;
         }
+        
     }
 }

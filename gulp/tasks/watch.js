@@ -17,6 +17,10 @@ gulp.task('watch', function(){
      watch('./app/assets/styles/**/*.css', function(){ // watch any folder or css file inside assets folder
         gulp.start('cssInject'); // watching for any change to our style css file
     });
+    
+    watch ('./app/assets/**/*.js', function(){
+       gulp.start('scriptsRefresh'); 
+    });
 });
 
 
@@ -26,3 +30,7 @@ gulp.task('cssInject',['styles'], function(){ // It first begin any dependency t
    return gulp.src('./app/temp/styles/style.css')
    .pipe(browserSync.stream());
 }); 
+
+gulp.task('scriptsRefresh', ['scripts'], function() {
+  browserSync.reload();
+});
